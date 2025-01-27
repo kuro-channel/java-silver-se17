@@ -23,7 +23,8 @@ public class Main {
 
         // chapter2-15
         // "abcde" = 5
-        // System.out.println(str.charAt(str.length())); // 実行時エラー：StringIndexOutOfBoundsException
+        // System.out.println(str.charAt(str.length())); //
+        // 実行時エラー：StringIndexOutOfBoundsException
         System.out.println(str.charAt(str.length() - 1)); // e
     }
 }

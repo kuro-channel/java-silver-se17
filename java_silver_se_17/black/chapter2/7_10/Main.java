@@ -24,9 +24,11 @@ public class Main {
      */
     static class Sample {
         private int value;
+
         public Sample(int value) {
             this.value = value;
         }
+
         public void test() {
             System.out.println(value);
         }
