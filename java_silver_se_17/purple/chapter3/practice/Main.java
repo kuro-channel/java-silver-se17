@@ -64,5 +64,95 @@ public class Main {
         System.out.println("x3 >= y3 : " + (y3 >= z3)); // true
         System.out.println("x3 < y3  : " + (y3 < z3)); // false
         System.out.println("x3 <= y3 : " + (y3 <= z3)); // true
+
+        // 代入演算子と複合代入演算子
+        int total = 0, price = 100, count = 0;
+        total += price; // total = total + price;
+        count += 2; // count = count + 2;
+        System.out.println(total);
+        System.out.println(count);
+
+        // 関係演算子
+        int y1 = 10;
+        int z1 = 10;
+        boolean b3 = (y1 == z1); // true
+        boolean b4 = (y1 > z1); // false
+        System.out.println(b3);
+        System.out.println(b4);
+
+        // 論理演算子の&と&&
+        int i1 = 0;
+        int j1 = 10;
+        boolean b5, b6;
+        b5 = (i1 < 0) & ((j1++) <= 10); // &:両方評価する
+
+        System.out.println("b5:" + b5 + " j1:" + j1);
+
+        j1 = 10;
+        b6 = (i1 < 0) && ((j1++) <= 10); // &&:最初のオペランドがtrueでなければ後続を評価しない
+        System.out.println("b6:" + b6 + " j1:" + j1);
+
+        j1 = 10;
+        b5 = (i1 < 0) | ((j1++) <= 10); // |:両方評価する
+
+        System.out.println("b5:" + b5 + " j1:" + j1);
+
+        j1 = 10;
+        b6 = (i1 < 0) || ((j1++) <= 10); // ||:最初のオペランドがtrueでなければ後続を評価しない
+        System.out.println("b6:" + b6 + " j1:" + j1);
+
+        // 三項演算子
+        int num1 = 11;
+        int num2 = 12;
+        String result1 = num1 % 2 == 0 ? "even" : "odd";
+        System.out.println(result1);
+
+        int val1 = num1 > 11 ? num1 = 0 : ++num1;
+        System.out.println(val1);
+
+        int val3 = num1 > 11 ? num1 = 0 : num1++;
+        System.out.println(num1);
+        System.out.println(val3);
+
+        String result2 = num2 % 2 == 0 ? "even" : "odd";
+        int val2 = num2 > 11 ? num2 = 0 : ++num2;
+        System.out.println(result2);
+        System.out.println(val2);
+        System.out.println(num2);
+
+        // 2.データ型
+        short s = 10;
+        int i2 = 10;
+        float f = 10.0F;
+        double d1 = 10.0;
+        char a3 = 'a';
+
+        String s1 = "Duke";
+        String s2 = new String("Duke");
+
+        // s1 = s2
+        System.out.println("s == i2:" + (s == i2)); // true
+        System.out.println("f == d1:" + (f == d1)); // true
+        System.out.println("a3 != 'A':" + (a3 != 'A')); // true
+        System.out.println("s1 == s2:" + (s1 == s2)); // false
+        System.out.println("s1.equals(s2):" + s1.equals(s2)); // true
+
+        // コンスタントプール
+        String s3 = "Java";
+        String s4 = new String("Java");
+        String s5 = "Java";
+        String s6 = s4.intern();
+        String t1 = """
+                Java""";
+        String t2 = """
+                Java
+                """;
+
+        System.out.println("equals():" + s3.equals(s4)); // true
+        System.out.println("s3 == s4:" + (s3 == s4)); // false newで生成されたオブジェクトは異なる
+        System.out.println("s3 == s5:" + (s3 == s5)); // true
+        System.out.println("s3 == s6:" + (s3 == s6)); // true intern()でコンスタントプールに登録される
+        System.out.println("s3 == t1:" + (s3 == t1)); // true 改行が含まれないと同じ
+        System.out.println("s3 == t2:" + (s3 == t2)); // false 改行が含まれると異なる
     }
 }
