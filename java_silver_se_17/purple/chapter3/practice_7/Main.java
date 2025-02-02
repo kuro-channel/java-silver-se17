@@ -53,7 +53,39 @@ public class Main {
         // break;
         // }
 
+        // -> を使用したswitch文
+        String s2 = "ABC";
+        switch (s2) {
+            case "ABC" -> System.out.println("ABC");
+            case "B" -> System.out.println("B");
+            case "C", "D" -> System.out.println("C, D");
+            default -> System.out.println("Other");
+        }
 
-        
+        // switch式
+        int month = 12;
+
+        System.out.println(switch (month) {
+            // yieldを使用して値を返す
+            case 1, 2, 12:
+                yield "Winter";
+            case 3, 4, 5:
+                yield "Spring";
+            case 6, 7, 8:
+                yield "Summer";
+            case 9, 10, 11:
+                yield "Autumn";
+            default:
+                yield "Unknown";
+        });
+
+        String val = switch (month) {
+            case 1, 2, 12 -> "Winter";
+            case 3, 4, 5 -> "Spring";
+            case 6, 7, 8 -> "Summer";
+            case 9, 10, 11 -> "Autumn";
+            default -> "Unknown";
+        };
+        System.out.println(val); // Winter
     }
 }
