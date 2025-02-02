@@ -1,4 +1,4 @@
-package purple.chapter3.practice;
+package purple.chapter3.practice_1_2;
 
 public class Main {
     public static void main(String[] args) {
@@ -154,5 +154,17 @@ public class Main {
         System.out.println("s3 == s6:" + (s3 == s6)); // true intern()でコンスタントプールに登録される
         System.out.println("s3 == t1:" + (s3 == t1)); // true 改行が含まれないと同じ
         System.out.println("s3 == t2:" + (s3 == t2)); // false 改行が含まれると異なる
+
+        // StringBuilder
+        // StringBuilderは文字列を比較するequalsメソッドを持っていない
+        StringBuilder sb1 = new StringBuilder("Java");
+        StringBuilder sb2 = new StringBuilder("Java");
+        // StringBuilderはequalsメソッドを持っていない
+        // java.object.equals()が呼ばれる
+        // Object.equals()は==と同じ, インスタンスが同じかどうかを比較する
+        System.out.println("sb1.equals(sb2):" + sb1.equals(sb2)); // false
+        String s7 = sb1.toString();
+        String s8 = sb2.toString();
+        System.out.println("s7.equals(s8):" + s7.equals(s8)); // true
     }
 }
