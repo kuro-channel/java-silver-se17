@@ -23,6 +23,7 @@ public class Main {
         System.out.println(a.equals(c)); // true
 
         // chapter2-26
+        // internメソッド: 文字列をコンスタントプールからさがして再利用する
         final String d = "abc";
         final String e = new String(d);
 

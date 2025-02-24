@@ -23,6 +23,19 @@ public class Main {
         }
         System.out.println("chapter2-36:" + total); // 12
 
+        // 参照型の場合は参照がコピーされる
+        var item1 = new Item("A");
+        var item2 = new Item("B");
+        Item[] itemArray = { item1, item2 };
+        Item[] itemArrayClone = itemArray.clone();
+
+        System.out.println("itemArray:" + itemArray);
+        System.out.println("itemArray[0]:" + itemArray[0]);
+        System.out.println("itemArray[1]:" + itemArray[1]);
+        System.out.println("itemArrayClone:" + itemArrayClone);
+        System.out.println("itemArrayClone[0]:" + itemArrayClone[0]);
+        System.out.println("itemArrayClone[1]:" + itemArrayClone[1]);
+
         // chapter2-38
         // ジェネリクス
         // ジェネリクスを使わないと、Object型で扱われる
@@ -42,6 +55,10 @@ public class Main {
         for (String str : list2) {
             System.out.println(str);
         }
+
+        // 型パラメータを指定してインスタンス化
+        Value<String> value = new Value<>("A");
+        System.out.println(value.getContents()); // A
 
         // chapter2-39
         // addメソッドは、指定したインデックスに要素を追加する
@@ -82,5 +99,35 @@ public class Main {
     }
 
     static class D31 extends C31 {
+    }
+
+    static class Item {
+        private String name;
+
+        public Item(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+    // chapter2-38
+    // ジェネリクス
+    static class Value<T> {
+        private T contents;
+
+        public Value(T contents) {
+            this.contents = contents;
+        }
+
+        public T getContents() {
+            return contents;
+        }
+
+        public void setContents(T contents) {
+            this.contents = contents;
+        }
     }
 }
